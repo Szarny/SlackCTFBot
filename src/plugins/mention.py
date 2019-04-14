@@ -5,7 +5,7 @@ from slackbot.bot import default_reply
 
 @respond_to("ctftime")
 def mention_ctf_time(message):
-    message.react("flag")
+    message.react("checkered_flag")
     message.reply("ctftime")
 
 
