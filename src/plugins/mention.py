@@ -15,6 +15,12 @@ def mention_help(message):
     message.reply("save")
 
 
+@respond_to("rm")
+def mention_help(message):
+    message.react("x")
+    message.reply("rm")
+
+
 @respond_to("ls")
 def mention_ls(message):
     message.react("ok_hand")
