@@ -7,7 +7,7 @@ def help_():
     `ctftime` : Show CTF events announced on CTFTime. :checkered_flag:
     `ls` : Show CTF events saved by members. :pencil:
     `save <title>|<date>` : Save CTF events. :pencil2:
-    `rm <id>` : Remove CTF events from list that shown in ls command. :x:
+    `rm <id>` : Remove CTF events from list that shown in `ls` command. :x:
     `help` : Show help message. :question:
 
     *Example*
