@@ -26,7 +26,7 @@ def save(title, date):
     with open("db/ctfinfo.pickle", "wb") as f:
         pickle.dump(ctflist, f)
 
-    return "*Save* `{id_} {title} ({date})`".format(
+    return "*Save*: `{id_} {title} ({date})`".format(
         id_=id_,
         title=title,
         date=date

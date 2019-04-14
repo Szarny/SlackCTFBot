@@ -16,7 +16,7 @@ def rm(rm_target_id):
             with open("db/ctfinfo.pickle", "wb") as f:
                 pickle.dump(removed_ctflist, f)
 
-            return "*Delete* `{id_}: {title} ({date})`".format(
+            return "*Delete*: `{id_}: {title} ({date})`".format(
                 id_=id_,
                 title=title,
                 date=date

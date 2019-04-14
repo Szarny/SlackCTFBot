@@ -1,5 +1,5 @@
 def help_():
-    return """:thinking_face: *HOW TO USE slack_ctf_bot* :thinking_face:
+    return """:thinking_face: *How to use slack_ctf_bot* :thinking_face:
 
     usage: `@slack_ctf_bot <command> (<args>)`
 
