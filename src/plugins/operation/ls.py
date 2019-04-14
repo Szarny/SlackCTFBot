@@ -5,7 +5,7 @@ def ls():
     with open("db/ctfinfo.pickle", "rb") as f:
         ctflist = pickle.load(f)
 
-    reply_message = ""
+    reply_message = "*--- CTF List ---*\n"
     message_tmpl = "- {id_}: {title} ({date})\n"
     for ctf in ctflist:
         reply_message += message_tmpl.format(
