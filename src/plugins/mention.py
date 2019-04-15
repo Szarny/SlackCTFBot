@@ -13,7 +13,9 @@ from .operation.help import help_
 def mention_ctf_time(message):
     message.react("checkered_flag")
 
-    result = ctftime()
+    mode = message.body["text"].split()[1]
+
+    result = ctftime(mode)
     message.send(result)
 
 
