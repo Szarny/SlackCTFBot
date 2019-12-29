@@ -2,16 +2,16 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def ctftime(mode):
-    if mode == "web":
-        response = requests.get("https://ctftime.org/event/list/upcoming")
-        soup = BeautifulSoup(response.text, "lxml")
+def get_ctfs():
+    response = requests.get("https://ctftime.org/event/list/upcoming",
+                             headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"})
 
-    if mode == "static":
-        with open("db/ctftime.html") as f:
-            soup = BeautifulSoup(f.read(), "lxml")
+    soup = BeautifulSoup(response.text, "html.parser")
+    events = soup.findAll("tr")[1:]
 
-    events = soup.findAll("tr").find_all("a")
+    result = []
+    for event in events:
+        result.append((event.find("a").text, event.find_all("td")[1].text))
 
-
-    return events
+    ctfs = "\n".join(["- *{}* ({})".format(r[0], r[1]) for r in result])
+    return ctfs
